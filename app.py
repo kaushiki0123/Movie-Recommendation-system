@@ -5,6 +5,11 @@ A content-based movie recommender built with Streamlit.
 
 import pickle
 import streamlit as st
+import os
+import build_model
+
+if not os.path.exists("data/similarity.pkl"):
+    build_model.main()
 
 # ---------- Page Config ----------
 st.set_page_config(
